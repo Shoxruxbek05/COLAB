@@ -1,1 +1,83 @@
+import numpy as np
 
+# 1 Massiv yaratish
+array_1d = np.array([3, 6, 9, 12])
+array_2d = np.array([[2, 4, 6], [8, 10, 12]])
+
+# 2 Matematik operatsiyalar
+sum_array = np.sum(array_2d)
+sum_array = np.sum(array_1d)
+mean_array = np.mean(array_2d)
+product_array = np.prod(array_1d)
+
+# Natijalarni chop etish
+print("1D Massiv: ", array_1d)
+print("2D Massiv:", array_2d)
+print("Massivlar yeg'indisi: ", sum_array)
+print("O'rtacha: ", mean_array)
+print("Ko'paytmasi: ", product_array)
+
+1D Massiv:  [ 3  6  9 12]
+2D Massiv: [[ 2  4  6]
+ [ 8 10 12]]
+Massivlar yeg'indisi:  30
+O'rtacha:  7.0
+Ko'paytmasi:  1944
+
+
+
+
+
+
+import pandas as pd
+
+# 1. DataFrame yaratish
+data = {
+    'Ismi': ['Anvarjon', 'Ozodbek', 'Samandar', 'Abdurasul', 'Farux', 'Muhammadjon', 'Sadulla', 'Javohir', 'Ilhomjon', 'Husanboy', 'Azamat', 'Azimjon'],
+    'Yoshi': [18, 19, 19, 19, 20, 19, 20, 22, 19, 25, 19, 19],
+    'Shahar': ['Andijon', 'Fargona', 'Farg\'ona', 'Qo\'qon', 'Farg\'ona', 'Farg\'ona', 'Farg\'ona', 'Namangan', 'Namangan', 'Farg\'ona', 'Namangan', 'Farg\'ona']
+}
+
+df = pd.DataFrame(data)
+
+# 2. Ma'lumotlarni ko'rish
+print(df)
+
+# 3. Filtrlash
+young_people = df[df['Yoshi'] < 19]  # Yoshi 19 dan kichik bo'lganlar
+print("19 yoshdan kichiklar:\n", young_people)
+
+# 4. O'zgartirish
+df['Yoshi'] += 1  # Har bir shaxsning yoshini 1 ga oshirish
+print("Yangilangan DataFrame: \n", df)
+
+           Ismi  Yoshi    Shahar
+0      Anvarjon     18   Andijon
+1       Ozodbek     19   Fargona
+2      Samandar     19  Farg'ona
+3     Abdurasul     19    Qo'qon
+4         Farux     20  Farg'ona
+5   Muhammadjon     19  Farg'ona
+6       Sadulla     20  Farg'ona
+7       Javohir     22  Namangan
+8      Ilhomjon     19  Namangan
+9      Husanboy     25  Farg'ona
+10       Azamat     19  Namangan
+11      Azimjon     19  Farg'ona
+19 yoshdan kichiklar:
+        Ismi  Yoshi   Shahar
+0  Anvarjon     18  Andijon
+Yangilangan DataFrame: 
+            Ismi  Yoshi    Shahar
+0      Anvarjon     19   Andijon
+1       Ozodbek     20   Fargona
+2      Samandar     20  Farg'ona
+3     Abdurasul     20    Qo'qon
+4         Farux     21  Farg'ona
+5   Muhammadjon     20  Farg'ona
+6       Sadulla     21  Farg'ona
+7       Javohir     23  Namangan
+8      Ilhomjon     20  Namangan
+9      Husanboy     26  Farg'ona
+10       Azamat     20  Namangan
+11      Azimjon     20  Farg'ona
