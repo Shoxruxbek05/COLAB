@@ -24,6 +24,11 @@ Massivlar yeg'indisi:  30
 O'rtacha:  7.0
 Ko'paytmasi:  1944
 
+
+
+
+
+
 import pandas as pd
 
 # 1. DataFrame yaratish
